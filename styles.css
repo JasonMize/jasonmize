@@ -1,0 +1,15 @@
+body {
+  background-color: aliceblue;
+  font-family: 'Noto Serif', serif;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.header-img {
+  width: 100%;
+}
+.ramblings {
+  max-width: 70%;
+}
