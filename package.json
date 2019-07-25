@@ -1,0 +1,43 @@
+{
+  "name": "jasonmize",
+  "version": "1.0.0",
+  "description": "Personal website",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack-dev-server --mode development",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JasonMize/jasonmize.git"
+  },
+  "keywords": [
+    "music",
+    "art",
+    "photography"
+  ],
+  "author": "Jason Mize",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JasonMize/jasonmize/issues"
+  },
+  "homepage": "https://github.com/JasonMize/jasonmize#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.37.0",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.7.2"
+  },
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-hot-loader": "^4.12.9"
+  }
+}
