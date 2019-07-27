@@ -2,6 +2,7 @@ import React from 'react';
 
 import Header from '../components/Header';
 import WritingScreen from './WritingScreen';
+import { orange } from '../config/colors';
 
 class HomeScreen extends React.Component {
   render () {
@@ -28,15 +29,17 @@ let styles = {
     paddingTop: '125px'
   },
   heroPicWrap: {
-    position: 'absolute',
     height: '80vh',
-    left: '30vw',
+    left: '20vw',
     overflow: 'hidden',
-    top: '20vh',
-    width: '40vw'
+    position: 'absolute',
+    top: '30vh',
+    width: '40vw',
+    zIndex: '100'
   },
   heroPic: {
     borderRadius: '20vw',
+    border: '15px solid' + orange,
     height: 'auto',
     maxWidth: '100%',
   }

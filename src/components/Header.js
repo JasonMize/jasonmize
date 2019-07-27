@@ -19,7 +19,8 @@ let styles = {
     position: 'fixed',
     left: 0,
     top: 0,
-    width: '100vw'
+    width: '100vw',
+    zIndex: 100
   },
   image: {
     marginLeft: '20px'
