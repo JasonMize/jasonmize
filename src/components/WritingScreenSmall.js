@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
 import { blue, violet, lightBlue, darkBlue } from '../config/colors';
 import { relative } from 'path';
 
-class WritingScreen extends React.Component {
+class WritingScreenSmall extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -16,11 +16,9 @@ class WritingScreen extends React.Component {
       <div style={styles.writingWrap}>
         <div style={styles.writing}>
 
-          <Link to='/'>
-            <div style={styles.plusWrap}>
-              <img style={styles.plus} src="images/plus-icon.png" />
-            </div>
-          </Link>
+          <div style={styles.plusWrap}>
+            <img style={styles.plus} src="images/plus-icon.png" />
+          </div>
           
           <h1>Why This Site?</h1>
         
@@ -81,10 +79,20 @@ class WritingScreen extends React.Component {
 
 let styles = {
   writingWrap: {
+    alignItems: 'center',
+    left: '-5vw',
+    justifyContent: 'center',
+    position: 'absolute',
+    top: '15vh'
+  },
+  writing: {
     backgroundColor: blue,
-    height: '100%',
-    padding: 20,
-    width: '100%'
+    border: '15px solid' + lightBlue,
+    borderRadius: '40vh',
+    height: '60vh',
+    overflow: 'hidden',
+    textAlign: 'center',
+    width: '60vh'
   },
   plusWrap: {
   },
@@ -97,4 +105,4 @@ let styles = {
   }
 };
 
-export default WritingScreen;
+export default WritingScreenSmall;
