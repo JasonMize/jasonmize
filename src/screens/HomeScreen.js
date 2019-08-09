@@ -1,19 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 import Header from '../components/Header';
 import WritingScreenSmall from '../components/WritingScreenSmall';
-import WritingScreen from './WritingScreen';
+// import WritingScreen from './WritingScreen';
 import { yellow } from '../config/colors';
 
 class HomeScreen extends React.Component {
   render () {
     return (
       <div>
-        <Header />
-
         <div style={styles.content}>
-          
-          <WritingScreenSmall />
+          <Link to='/writings'>
+            <WritingScreenSmall />
+          </Link>
 
           <div style={styles.heroPicWrap}>
             <img style={styles.heroPic} src="images/jasonProfile_tux.jpg" />
