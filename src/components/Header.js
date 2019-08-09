@@ -15,9 +15,10 @@ let styles = {
     backgroundColor: '#fffff9',
     backgroundImage: 'linear-gradient(90deg, aliceblue 40%, #444)',
     borderBottom: '3px solid #444',
-    height: '125px',
-    position: 'fixed',
+    height: 125,
+    position: 'absolute',
     left: 0,
+    right: 0,
     top: 0,
     width: '100vw',
     zIndex: 100

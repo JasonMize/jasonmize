@@ -17,8 +17,8 @@ class WritingScreen extends React.Component {
         <div style={styles.writing}>
 
           <Link to='/'>
-            <div style={styles.plusWrap}>
-              <img style={styles.plus} src="images/plus-icon.png" />
+            <div style={styles.back}>
+              Home
             </div>
           </Link>
           
@@ -80,21 +80,14 @@ class WritingScreen extends React.Component {
 }
 
 let styles = {
+  back: {
+
+  },
   writingWrap: {
     backgroundColor: blue,
     height: '100%',
     padding: 20,
-    width: '100%'
   },
-  plusWrap: {
-  },
-  plus: {
-    height: 70,    
-    left: '65%',
-    position: 'absolute',
-    top: '20%',
-    width: 70,
-  }
 };
 
 export default WritingScreen;
