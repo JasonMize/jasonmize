@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import Header from '../components/Header';
 import WritingScreenSmall from '../components/WritingScreenSmall';
-// import WritingScreen from './WritingScreen';
+import CollageScreenSmall from '../components/CollageScreenSmall';
 import { yellow } from '../config/colors';
 
 class HomeScreen extends React.Component {
@@ -13,6 +13,9 @@ class HomeScreen extends React.Component {
         <div style={styles.content}>
           <Link to='/writings'>
             <WritingScreenSmall />
+          </Link>
+          <Link to='/collages'>
+            <CollageScreenSmall />
           </Link>
 
           <div style={styles.heroPicWrap}>

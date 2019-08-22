@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { blue, violet, lightBlue, darkBlue } from '../config/colors';
-import { relative } from 'path';
+import { black, blue, violet, blueLight, blueDark } from '../config/colors';
 
 class WritingScreenSmall extends React.Component {
   constructor(props) {
@@ -15,10 +14,6 @@ class WritingScreenSmall extends React.Component {
     return (
       <div style={styles.writingWrap}>
         <div style={styles.writing}>
-
-          <div style={styles.plusWrap}>
-            <img style={styles.plus} src="images/plus-icon.png" />
-          </div>
           
           <h1>Why This Site?</h1>
         
@@ -87,21 +82,13 @@ let styles = {
   },
   writing: {
     backgroundColor: blue,
-    border: '15px solid' + lightBlue,
+    border: '15px solid' + blueLight,
     borderRadius: '40vh',
+    color: black,
     height: '60vh',
     overflow: 'hidden',
     textAlign: 'center',
     width: '60vh'
-  },
-  plusWrap: {
-  },
-  plus: {
-    height: 70,    
-    left: '65%',
-    position: 'absolute',
-    top: '20%',
-    width: 70,
   }
 };
 
