@@ -13,20 +13,42 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules|bower_components)/,
         loader: "babel-loader"
-        // options: { 
-        //   presets: [
-        //     "@babel/env", 
-        //     "@babel/preset-react"
-        //   ],
-        //   plugins: [
-        //     "@babel/plugin-proposal-class-properties", 
-        //     "@babel/plugin-transform-regenerator"
-        //   ]
-        // }
       },
       {
         test: /\.css$/,
         use: ["style-loader", "css-loader"]
+      },
+      {
+        test: /\.(gif|png|jpe?g|svg)$/i,
+        use: [
+          'file-loader',
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              bypassOnDebug: true, // webpack@1.x
+              disable: true, // webpack@2.x and newer
+              // mozjpeg: {
+              //   progressive: true,
+              //   quality: 65
+              // },
+              // // optipng.enabled: false will disable optipng
+              // optipng: {
+              //   enabled: false,
+              // },
+              // pngquant: {
+              //   quality: '65-90',
+              //   speed: 4
+              // },
+              // gifsicle: {
+              //   interlaced: false,
+              // },
+              // // the webp option will enable WEBP
+              // webp: {
+              //   quality: 75
+              // }
+            },
+          },
+        ],
       }
     ]
   },
@@ -40,7 +62,8 @@ module.exports = {
     contentBase: path.join(__dirname, "public"),
     port: 3000,
     publicPath: "http://localhost:3000/dist/",
-    hotOnly: true
+    hotOnly: true,
+    historyApiFallback: true,
   },
   plugins: [new webpack.HotModuleReplacementPlugin()]
 };
