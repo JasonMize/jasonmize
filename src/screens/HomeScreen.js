@@ -30,6 +30,7 @@ class HomeScreen extends React.Component {
 
 let styles = {
   content: {
+    flex: 1
   },
   heroPicWrap: {
     alignItems: 'center',
@@ -41,10 +42,10 @@ let styles = {
   heroPic: {
     border: '25px solid' + yellow,
     borderRadius: '50vh',
-    height: '80vh',
+    height: '60vh',
     overflow: 'hidden',
     textAlign: 'center',
-    width: '80vh'
+    width: '60vh'
   }
 };
 

@@ -48,43 +48,37 @@ let styles = {
     width: '40vh'
   },
   image1: {
-    borderColor: grey,
-    borderWidth: 1,
+    border: '2px solid' + grey,
     height: 'auto',
     transform: 'rotate(25deg)',
     width: 90,
   },
   image2: {
-    borderColor: grey,
-    borderWidth: 1,
+    border: '2px solid' + grey,
     height: 'auto',
     transform: 'rotate(-15deg)',
     width: 70,
   },
   image3: {
-    borderColor: grey,
-    borderWidth: 1,
+    border: '2px solid' + grey,
     height: 'auto',
     transform: 'rotate(-5deg)',
     width: 75,
   },
   image4: {
-    borderColor: grey,
-    borderWidth: 1,
+    border: '2px solid' + grey,
     height: 'auto',
     transform: 'rotate(10deg)',
     width: 80,
   },
   image5: {
-    borderColor: grey,
-    borderWidth: 1,
+    border: '2px solid' + grey,
     height: 'auto',
     transform: 'rotate(-30deg)',
     width: 70
   },
   image6: {
-    borderColor: grey,
-    borderWidth: 1,
+    border: '2px solid' + grey,
     height: 'auto',
     transform: 'rotate(-10deg)',
     width: 90

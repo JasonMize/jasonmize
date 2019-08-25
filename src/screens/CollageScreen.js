@@ -1,14 +1,32 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { green, greenLight, blueDark } from '../config/colors';
+import { green, greenLight, blueDark, grey } from '../config/colors';
 
 class CollageScreen extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
+  state = {
+    imageUrls: []
   }
 
-  componentDidMount () {}
+  getImageUrls = () => {
+    let imageUrls = [];
+    let req = require.context('../../public/images/collages', false, /\.(png|jpe?g|svg)$/);
+    req.keys().forEach(function(key){
+      imageUrls.push(req(key));
+    });
+    this.setState({ imageUrls });
+  };
+
+  componentDidMount() {
+    this.getImageUrls();
+  }
+
+  renderImages = () => {
+    return this.state.imageUrls.map((url, index) => {
+      return (
+        <img src={url} style={styles.image} key={index} />
+      )
+    })
+  };
   
   render () {
     return (
@@ -27,6 +45,10 @@ class CollageScreen extends React.Component {
           birthday cards and gifts.
         </p>
           
+        <div style={styles.gallery}>
+          {this.renderImages()}
+        </div>
+        
       </div>
     );
   }
@@ -37,13 +59,24 @@ let styles = {
     paddingTop: 10
   },
   screenWrap: {
+    flex: 1,
     backgroundColor: green,
-    borderWidth: 10,
-    borderColor: greenLight,
+    border: '20px solid' + greenLight,
     color: blueDark,
-    height: '100%',
+    marginTop: 25,
     padding: 20,
   },
+  gallery: {
+    flex: 1,
+    flexDirection: 'row',
+    flexWrap: 'wrap'
+  },
+  image: {
+    border: '5px solid' + grey,
+    height: 'auto',
+    margin: 20,
+    width: 300
+  }
 };
 
 export default CollageScreen;

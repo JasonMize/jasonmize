@@ -83,7 +83,7 @@ let styles = {
   },
   screenWrap: {
     backgroundColor: blue,
-    height: '100%',
+    flex: 1,
     padding: 20,
   },
 };
