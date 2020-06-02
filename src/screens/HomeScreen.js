@@ -1,22 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
 
-import Header from '../components/Header';
 import WritingScreenSmall from '../components/WritingScreenSmall';
 import CollageScreenSmall from '../components/CollageScreenSmall';
-import { yellow } from '../config/colors';
+import { yellow } from '../constants/colors';
+import AppLink from '../components/AppLink';
 
 class HomeScreen extends React.Component {
   render () {
     return (
       <div>
         <div style={styles.content}>
-          <Link to='/writings'>
-            <WritingScreenSmall />
-          </Link>
-          <Link to='/collages'>
-            <CollageScreenSmall />
-          </Link>
+          <AppLink 
+            to='/writings'
+            children={<WritingScreenSmall />}
+          />
+          
+          <AppLink 
+            to='/collages'
+            children={<CollageScreenSmall />}
+          />
 
           <div style={styles.heroPicWrap}>
             <img style={styles.heroPic} src="images/jasonProfile_tux.jpg" />
@@ -34,10 +36,10 @@ let styles = {
   },
   heroPicWrap: {
     alignItems: 'center',
-    left: '20vw',
+    left: '30%',
     justifyContent: 'center',
     position: 'absolute',
-    top: '30vh'
+    top: '30%'
   },
   heroPic: {
     border: '25px solid' + yellow,
@@ -45,7 +47,9 @@ let styles = {
     height: '60vh',
     overflow: 'hidden',
     textAlign: 'center',
-    width: '60vh'
+    width: '60vh',
+    marginLeft: 'auto',
+    marginRight: 'auto'
   }
 };
 

@@ -1,16 +1,12 @@
 import React from 'react';
 
-class Header extends React.Component {
-  render () {
-    return (
-      <div style={styles.headerWrap}>
-        <img style={styles.image} src="images/jasonmize.png" />
-      </div>
-    );
-  }
-}
+export default () => (
+  <div style={styles.headerWrap}>
+    <img style={styles.image} src="images/jasonmize.png" />
+  </div>
+)
 
-let styles = {
+const styles = {
   headerWrap: {
     backgroundColor: '#fffff9',
     backgroundImage: 'linear-gradient(90deg, aliceblue 40%, #444)',
@@ -27,6 +23,3 @@ let styles = {
     marginLeft: '20px'
   }
 };
-
-
-export default Header;

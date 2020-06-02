@@ -6,7 +6,7 @@ import Header from './components/Header';
 import HomeScreen from './screens/HomeScreen';
 import WritingScreen from './screens/WritingScreen';
 import CollageScreen from './screens/CollageScreen';
-import { black } from './config/colors';
+import { black } from './constants/colors';
 
 class App extends Component {
   render () {

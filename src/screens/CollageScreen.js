@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { green, greenLight, blueDark, grey } from '../config/colors';
+
+import Breadcrumb from '../components/Breadcrumb'
+import { green, greenLight, blueDark, grey } from '../constants/colors';
 
 class CollageScreen extends React.Component {
   state = {
@@ -31,12 +32,8 @@ class CollageScreen extends React.Component {
   render () {
     return (
       <div style={styles.screenWrap}>
-
-        <Link to='/'>
-          <div style={styles.back}>
-            Home
-          </div>
-        </Link>
+        
+        <Breadcrumb to='/' text='Home' />
         
         <h1>Collage</h1>
       

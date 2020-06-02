@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { blue } from '../config/colors';
+
+import Breadcrumb from '../components/Breadcrumb';
+import { blue } from '../constants/colors';
 
 class WritingScreen extends React.Component {
   constructor(props) {
@@ -14,12 +15,8 @@ class WritingScreen extends React.Component {
     return (
       <div style={styles.screenWrap}>
 
-        <Link to='/'>
-          <div style={styles.back}>
-            Home
-          </div>
-        </Link>
-        
+        <Breadcrumb to='/' text='Home'/>
+
         <h1>Why This Site?</h1>
       
         <p>
@@ -68,9 +65,6 @@ class WritingScreen extends React.Component {
         <p>
           This will have to do.
         </p>
-        <p>
-          Maybe it will help.
-        </p>
 
       </div>
     );
@@ -78,9 +72,9 @@ class WritingScreen extends React.Component {
 }
 
 let styles = {
-  back: {
-    paddingTop: 10
-  },
+  // back: {
+  //   paddingTop: 10
+  // },
   screenWrap: {
     backgroundColor: blue,
     flex: 1,
