@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { black, green, greenLight, grey } from '../config/colors';
+import { black, green, greenLight, grey } from '../constants/colors';
 
 class CollageScreenSmall extends React.Component {
   constructor(props) {

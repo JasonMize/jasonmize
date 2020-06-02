@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { black, blue, violet, blueLight, blueDark } from '../config/colors';
+import { black, blue, violet, blueLight, blueDark } from '../constants/colors';
 
 class WritingScreenSmall extends React.Component {
   constructor(props) {
