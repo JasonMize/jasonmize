@@ -2,32 +2,21 @@ import React from 'react';
 
 import { black, green, greenLight, grey } from '../constants/colors';
 
-class CollageScreenSmall extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+export default ({}) => (
+  <div style={styles.collageWrap} id="polka-dot-collages">
+    <div style={styles.collage}>
+      
+      <h1>Collages</h1>
 
-  componentDidMount () {}
-  
-  render () {
-    return (
-      <div style={styles.collageWrap}>
-        <div style={styles.collage}>
-          
-          <h1>Collages</h1>
-
-          <img style={styles.image1} src="images/collages/Jason (2017) Birthday Day Card For Holly.jpeg" />
-          <img style={styles.image2} src="images/collages/Jason (2017) Birthday Card For Hannah.jpg" />
-          <img style={styles.image3} src="images/collages/Jason (2017) Birthday Card For Carolyn.jpeg" />
-          <img style={styles.image5} src="images/collages/Jason (2017) Birthday Card For Mattie.jpg" />
-          <img style={styles.image4} src="images/collages/Jason (2017) Birthday Card for Rebecca.jpg" />
-          <img style={styles.image6} src="images/collages/Jason (2017) Birthday Card For Zoe.jpg" />
-        </div>
-      </div>
-    );
-  }
-}
+      <img style={styles.image1} src="images/collages/Jason (2017) Birthday Day Card For Holly.jpeg" />
+      <img style={styles.image2} src="images/collages/Jason (2017) Birthday Card For Hannah.jpg" />
+      <img style={styles.image3} src="images/collages/Jason (2017) Birthday Card For Carolyn.jpeg" />
+      <img style={styles.image5} src="images/collages/Jason (2017) Birthday Card For Mattie.jpg" />
+      <img style={styles.image4} src="images/collages/Jason (2017) Birthday Card for Rebecca.jpg" />
+      <img style={styles.image6} src="images/collages/Jason (2017) Birthday Card For Zoe.jpg" />
+    </div>
+  </div>
+)
 
 let styles = {
   collageWrap: {
@@ -84,5 +73,3 @@ let styles = {
     width: 90
   }
 };
-
-export default CollageScreenSmall;
