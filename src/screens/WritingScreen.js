@@ -13,7 +13,7 @@ class WritingScreen extends React.Component {
   
   render () {
     return (
-      <div style={styles.screenWrap}>
+      <div style={styles.screenWrap} id="polka-dot-writings">
 
         <Breadcrumb to='/' text='Home'/>
 
