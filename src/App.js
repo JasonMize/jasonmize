@@ -25,16 +25,13 @@ class App extends Component {
 
 let styles = {
   appWrap: {
-    // bottom: 0,
     color: black,
     fontFamily: 'Noto Serif, serif',
-    // left: 0,
+    // backgroundColor: 'pink',
+    height: 'inherit',
     margin: 0,
     padding: 0,
-    paddingTop: "5%", // for the header
-    // position: 'absolute',
-    // right: 0,
-    // top: 0
+    position: 'relative',
   }
 }
 
