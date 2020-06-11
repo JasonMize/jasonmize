@@ -4,7 +4,6 @@ import { greyDark } from '../constants/colors'
 
 export default () => (
   <div style={styles.headerWrap} id="header">
-    {/* <div>Jason Mize</div> */}
     <img style={styles.image} src="images/jasonmize.png" />
   </div>
 )
@@ -17,7 +16,7 @@ const styles = {
     marginTop: '2%',
     paddingTop: '1%',
     textAlign: 'center',
-    zIndex: 100,
+    zIndex: 1000,
   },
   image: {
     width: '70%'

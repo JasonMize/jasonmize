@@ -2,9 +2,40 @@ import React from 'react';
 
 import { black, blue, violet, blueLight, blueDark } from '../constants/colors';
 
-export default ({}) => (
-  <div style={styles.writingWrap} id="polka-dot-writings">
-    <div style={styles.writing}>
+export default ({
+  borderColor, 
+  borderWidth, 
+  dotColor,
+  dotLeft, 
+  dotSize,
+  dotTop, 
+  screenHeight,
+  screenWidth,
+  textColor 
+}) => (
+  <div 
+    style={{
+      alignItems: 'center',
+      fontSize: screenWidth * .015,
+      justifyContent: 'center',
+      left: `${screenWidth * dotLeft}px`,
+      position: 'absolute',
+      top: `${screenHeight * dotTop}px`,
+      // zIndex: '-10'
+    }}
+  >
+    <div 
+      style={{
+        backgroundColor: dotColor,
+        border: `${borderWidth}vw solid` + borderColor,
+        borderRadius: `${screenWidth * dotSize}px`,
+        color: textColor,
+        height: `${screenWidth * dotSize}px`,
+        overflow: 'hidden',
+        textAlign: 'center',
+        width: `${screenWidth * dotSize}px`,
+      }}
+    >
       
       <h1>Why This Site?</h1>
     
@@ -63,20 +94,20 @@ export default ({}) => (
  
 let styles = {
   writingWrap: {
-    alignItems: 'center',
-    left: '-5vw',
-    justifyContent: 'center',
-    position: 'absolute',
-    top: '15vh'
+    // alignItems: 'center',
+    // left: '-5vw',
+    // justifyContent: 'center',
+    // position: 'absolute',
+    // top: '15vh'
   },
   writing: {
-    backgroundColor: blue,
-    border: '15px solid' + blueLight,
-    borderRadius: '40vh',
-    color: black,
-    height: '60vh',
-    overflow: 'hidden',
-    textAlign: 'center',
-    width: '60vh'
+    // backgroundColor: blue,
+    // border: '15px solid' + blueLight,
+    // borderRadius: '40vh',
+    // color: black,
+    // height: '60vh',
+    // overflow: 'hidden',
+    // textAlign: 'center',
+    // width: '60vh'
   }
 };
