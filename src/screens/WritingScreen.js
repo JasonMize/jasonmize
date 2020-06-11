@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Breadcrumb from '../components/Breadcrumb';
-import { blue } from '../constants/colors';
+import { black, blue, blueLight } from '../constants/colors';
 
 class WritingScreen extends React.Component {
   constructor(props) {
@@ -63,7 +63,7 @@ class WritingScreen extends React.Component {
           simply to be made.  
         </p>
         <p>
-          This will have to do.
+          This is a start.
         </p>
 
       </div>
@@ -72,12 +72,12 @@ class WritingScreen extends React.Component {
 }
 
 let styles = {
-  // back: {
-  //   paddingTop: 10
-  // },
   screenWrap: {
     backgroundColor: blue,
+    border: '20px solid' + blueLight,
+    color: black,
     flex: 1,
+    marginTop: 25,
     padding: 20,
   },
 };

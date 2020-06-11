@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Breadcrumb from '../components/Breadcrumb'
-import { green, greenLight, blueDark, grey } from '../constants/colors';
+import { black, green, greenLight, grey } from '../constants/colors';
 
 class CollageScreen extends React.Component {
   state = {
@@ -52,14 +52,11 @@ class CollageScreen extends React.Component {
 }
 
 let styles = {
-  back: {
-    paddingTop: 10
-  },
   screenWrap: {
-    flex: 1,
     backgroundColor: green,
     border: '20px solid' + greenLight,
-    color: blueDark,
+    color: black,
+    flex: 1,
     marginTop: 25,
     padding: 20,
   },
