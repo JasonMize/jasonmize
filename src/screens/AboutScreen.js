@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Breadcrumb from '../components/Breadcrumb'
-import { green, greenLight, blueDark, grey } from '../constants/colors';
+import { green, greenLight, blueDark, grey, black, yellow, greyDark, blueLight } from '../constants/colors';
 
 class AboutScreen extends React.Component {
   state = {
@@ -10,7 +10,7 @@ class AboutScreen extends React.Component {
 
   getImageUrls = () => {
     let imageUrls = [];
-    let req = require.context('../../public/images/collages', false, /\.(png|jpe?g|svg)$/);
+    let req = require.context('../../public/images/about', false, /\.(png|jpe?g|svg)$/);
     req.keys().forEach(function(key){
       imageUrls.push(req(key));
     });
@@ -51,14 +51,11 @@ class AboutScreen extends React.Component {
 }
 
 let styles = {
-  back: {
-    paddingTop: 10
-  },
   screenWrap: {
+    backgroundColor: grey,
+    border: '20px solid' + yellow,
+    color: black,
     flex: 1,
-    backgroundColor: green,
-    border: '20px solid' + greenLight,
-    color: blueDark,
     marginTop: 25,
     padding: 20,
   },
@@ -68,7 +65,7 @@ let styles = {
     flexWrap: 'wrap'
   },
   image: {
-    border: '5px solid' + grey,
+    border: '5px solid' + greyDark,
     height: 'auto',
     margin: 20,
     width: 300

@@ -30,6 +30,6 @@ export default ({
         textAlign: 'center',
         width: `${screenWidth * dotSize}px`,
       }} 
-      src="images/jasonProfile_tux.jpg" />
+      src="images/about/jasonProfile_tux.jpg" />
   </div>
 );
