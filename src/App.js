@@ -6,6 +6,7 @@ import Header from './components/Header';
 import HomeScreen from './screens/HomeScreen';
 import WritingScreen from './screens/WritingScreen';
 import CollageScreen from './screens/CollageScreen';
+import AboutScreen from './screens/AboutScreen'
 import { black } from './constants/colors';
 
 class App extends Component {
@@ -15,6 +16,7 @@ class App extends Component {
         <div className="App" style={styles.appWrap}>
           <Header />
           <Route path="/" exact component={HomeScreen} />
+          <Route path="/about" component={AboutScreen} />
           <Route path="/collages" component = {CollageScreen} />
           <Route path="/writings" component = {WritingScreen} />
         </div>
@@ -27,7 +29,6 @@ let styles = {
   appWrap: {
     color: black,
     fontFamily: 'Noto Serif, serif',
-    // backgroundColor: 'pink',
     height: 'inherit',
     margin: 0,
     padding: 0,
