@@ -23,8 +23,6 @@ class HomeScreen extends React.Component {
 
   render () {
     const { screenHeight, screenWidth } = this.state
-    console.log('BLAMMO: HEIGHT: ', screenHeight)
-    console.log('BLAMMO: WIDTH: ', screenWidth)
 
     return (
       <div id="HomeScreen" style={styles.homeScreenWrap}> 
