@@ -1,6 +1,6 @@
 import React from 'react'
-import ReactResizeDetector from 'react-resize-detector';
 
+import {screenWidthContext, screenHeightContext} from '../contexts/ScreenSizeContext'
 import WritingScreenSmall from '../components/WritingScreenSmall'
 import CollageScreenSmall from '../components/CollageScreenSmall'
 import AboutScreenSmall from '../components/AboutScreenSmall'
@@ -16,28 +16,13 @@ import {
 } from '../constants/colors'
 
 class HomeScreen extends React.Component {
-  state = {
-    screenHeight: 100, 
-    screenWidth: 100,
-  }
-
   render () {
-    const { screenHeight, screenWidth } = this.state
+    const screenWidth = screenWidthContext._currentValue
+    const screenHeight = screenHeightContext._currentValue
 
     return (
       <div id="HomeScreen" style={styles.homeScreenWrap}> 
-        <ReactResizeDetector 
-          handleWidth 
-          handleHeight 
-          onResize={(width, height) => 
-            this.setState(() => ({ 
-              ...this.state, 
-              screenWidth: width, 
-              screenHeight: height
-            }))
-          }
-        />
-        
+
         <AppLink
           to='/collages'
           children={

@@ -21,7 +21,6 @@ export default ({
       left: `${screenWidth * dotLeft}px`,
       position: 'absolute',
       top: `${screenHeight * dotTop}px`,
-      // zIndex: '-10',
     }} 
   >
     <div 
