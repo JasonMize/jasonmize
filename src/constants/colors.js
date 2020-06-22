@@ -16,3 +16,5 @@ export const orangeDark = '#ff551a'
 export const yellow = '#fff9c0'
 
 export const violet = '#c4c6f4'
+
+export const white = '#fcfdff'

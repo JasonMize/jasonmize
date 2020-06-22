@@ -1,9 +1,9 @@
 import React from 'react'
 
 import {screenWidthContext, screenHeightContext} from '../contexts/ScreenSizeContext'
-import WritingScreenSmall from '../components/WritingScreenSmall'
-import CollageScreenSmall from '../components/CollageScreenSmall'
-import AboutScreenSmall from '../components/AboutScreenSmall'
+import DotTFTSU from '../components/DotTFTSU'
+import DotCollage from '../components/DotCollage'
+import DotAbout from '../components/DotAbout'
 import AppLink from '../components/AppLink'
 
 import { 
@@ -12,7 +12,8 @@ import {
   blueLight,
   green, 
   greenLight, 
-  yellow 
+  yellow,
+  white
 } from '../constants/colors'
 
 class HomeScreen extends React.Component {
@@ -26,7 +27,7 @@ class HomeScreen extends React.Component {
         <AppLink
           to='/collages'
           children={
-            <CollageScreenSmall
+            <DotCollage
               borderColor={greenLight}
               borderWidth={4}
               dotColor={green}
@@ -42,18 +43,18 @@ class HomeScreen extends React.Component {
         />
 
         <AppLink 
-          to='/writings'
+          to='/tftsu'
           children={
-            <WritingScreenSmall 
+            <DotTFTSU 
               borderColor={blueLight}
               borderWidth={2}
-              dotColor={blue}
+              dotColor={black}
               dotLeft={-.1}
               dotSize={.4}
               dotTop={.05}
               screenHeight={screenHeight}
               screenWidth={screenWidth}
-              textColor={black}
+              textColor={white}
             />
           }
         />
@@ -61,7 +62,7 @@ class HomeScreen extends React.Component {
         <AppLink
           to="/about"
           children={
-            <AboutScreenSmall 
+            <DotAbout 
               borderColor={yellow}
               borderWidth={3}
               dotColor={black}
