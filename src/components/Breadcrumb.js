@@ -3,8 +3,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHandPointLeft } from '@fortawesome/free-regular-svg-icons'
 
 import AppLink from './AppLink'
+import { blueDark } from '../constants/colors'
 
-export default ({to, text, style, borderColor}) => (
+export default ({to, text, style, color, borderColor}) => (
   <AppLink
     to={to}
     style={{ margin: '5%', ...style }}
@@ -13,6 +14,7 @@ export default ({to, text, style, borderColor}) => (
         style={{
           border: `10px solid ${borderColor}`,
           borderRadius: '70px',
+          color: color,
           height: '70px',
           float: 'left',
           justifyContent: 'center',
@@ -25,6 +27,7 @@ export default ({to, text, style, borderColor}) => (
           <FontAwesomeIcon 
             style={{ 
               marginTop: '12px', 
+              color: blueDark
             }} 
             icon={faHandPointLeft} 
           />

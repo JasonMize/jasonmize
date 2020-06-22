@@ -17,7 +17,6 @@ export default ({
       left: `${screenWidth * dotLeft}px`,
       position: 'absolute',
       top: `${screenHeight * dotTop}px`,
-      // zIndex: '100',
     }} 
   >
     <img 
@@ -30,6 +29,7 @@ export default ({
         textAlign: 'center',
         width: `${screenWidth * dotSize}px`,
       }} 
-      src="images/about/jasonProfile_tux.jpg" />
+      src="images/tftsu/ad_facebook_earth+shipyard_308x308.jpg"  
+    />
   </div>
 );

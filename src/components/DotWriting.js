@@ -21,7 +21,6 @@ export default ({
       left: `${screenWidth * dotLeft}px`,
       position: 'absolute',
       top: `${screenHeight * dotTop}px`,
-      // zIndex: '-10'
     }}
   >
     <div 
@@ -93,21 +92,4 @@ export default ({
 )
  
 let styles = {
-  writingWrap: {
-    // alignItems: 'center',
-    // left: '-5vw',
-    // justifyContent: 'center',
-    // position: 'absolute',
-    // top: '15vh'
-  },
-  writing: {
-    // backgroundColor: blue,
-    // border: '15px solid' + blueLight,
-    // borderRadius: '40vh',
-    // color: black,
-    // height: '60vh',
-    // overflow: 'hidden',
-    // textAlign: 'center',
-    // width: '60vh'
-  }
 };

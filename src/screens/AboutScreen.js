@@ -1,49 +1,48 @@
 import React from 'react';
 
 import Breadcrumb from '../components/Breadcrumb'
-import { green, greenLight, blueDark, grey, black, yellow, greyDark, blueLight } from '../constants/colors';
+import { grey, black, yellow, greyDark } from '../constants/colors';
+import ImageGallery from '../components/ImageGallery';
 
 class AboutScreen extends React.Component {
-  state = {
-    imageUrls: []
-  }
 
-  getImageUrls = () => {
-    let imageUrls = [];
-    let req = require.context('../../public/images/about', false, /\.(png|jpe?g|svg)$/);
-    req.keys().forEach(function(key){
-      imageUrls.push(req(key));
-    });
-    this.setState({ imageUrls });
-  };
-
-  componentDidMount() {
-    this.getImageUrls();
-  }
-
-  renderImages = () => {
-    return this.state.imageUrls.map((url, index) => {
-      return (
-        <img src={url} style={styles.image} key={index} />
-      )
+  getImageData = () => {
+    let imageUrls = []
+    let request = require.context(
+      '../../public/images/about', 
+      false, 
+      /\.(png|jpe?g|svg)$/
+    )
+    request.keys().forEach(function(key){
+      imageUrls.push(request(key))
     })
+    return imageUrls
   };
-  
+
   render () {
     return (
       <div style={styles.screenWrap}>
         
-        <Breadcrumb to='/' text='Home' />
+        <Breadcrumb to='/' text='Home'  borderColor={yellow} />
         
         <h1>About</h1>
       
         <p>
-          Stuff goes here.
+          Howdy.  I'm Jason Mize.  This is a collection.  My own personal curio cabinet of odds and ends.  
+        </p>
+
+        <p>
+          Click around!  If you see anything you enjoy, please let me know.  Or dislike.  Really, I'm a huge fan of 
+          feedback of any sort.  I promise to only cry on the inside. 
         </p>
           
-        <div style={styles.gallery}>
-          {this.renderImages()}
-        </div>
+        <ImageGallery
+          getImageData={() => this.getImageData()}
+          imageBorderColor={yellow}
+          imageMargin={.02}
+          numberOfColumns={3}
+          pageSpacing={80} // border + padding * 2
+        />
         
       </div>
     );
@@ -58,17 +57,6 @@ let styles = {
     flex: 1,
     marginTop: 25,
     padding: 20,
-  },
-  gallery: {
-    flex: 1,
-    flexDirection: 'row',
-    flexWrap: 'wrap'
-  },
-  image: {
-    border: '5px solid' + greyDark,
-    height: 'auto',
-    margin: 20,
-    width: 300
   }
 };
 
