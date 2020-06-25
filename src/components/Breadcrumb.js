@@ -27,7 +27,7 @@ export default ({to, text, style, color, borderColor}) => (
           <FontAwesomeIcon 
             style={{ 
               marginTop: '12px', 
-              color: blueDark
+              color: color
             }} 
             icon={faHandPointLeft} 
           />

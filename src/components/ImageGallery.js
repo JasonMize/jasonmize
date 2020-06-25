@@ -6,14 +6,14 @@ import AppProgressiveImage from '../components/AppProgressiveImage'
 
 export default ({ 
   imageBorderColor, 
-  getImageData, 
+  imageData, 
   imageMargin, 
+  linkColor,
   numberOfColumns,
   pageSpacing,
+  backgroundColor
 }) => {
   const screenWidth = screenWidthContext._currentValue
-
-  const imageData = getImageData();
   
   // determine column max
   if (screenWidth < 600) { // small phones are always 1 column
@@ -46,6 +46,7 @@ export default ({
           <AppLink
             target="_blank" 
             to={img.url}
+            linkColor={linkColor}
           >
             {img.caption && (
               <div
@@ -54,7 +55,10 @@ export default ({
                   marginLeft: `${screenWidth * imageMargin}px`,
                   marginRight: `${screenWidth * imageMargin}px`,
                   marginBottom: 0,
-                  textAlign: 'center'
+                  textAlign: 'center',
+                  overflowWrap: 'normal',
+                  maxWidth: `${maxWidth}px`,
+                  border: `1vw solid ${backgroundColor}`
                 }}
               >
                 {img.caption}
