@@ -40,27 +40,27 @@ export default ({
 
       <img 
         style={{width: screenWidth * .09, ...styles.image, ...styles.image1}} 
-        src="images/collages/Jason (2017) Birthday Day Card For Holly.jpeg" 
+        src="images/collages/SantaNeedsHisSoup_tn.jpg" 
       />
       <img 
         style={{width: screenWidth * .07, ...styles.image, ...styles.image2}}
-        src="images/collages/Jason (2017) Birthday Card For Hannah.jpg" 
+        src="/images/collages/AngelRoad_tn.jpg" 
       />
       <img 
         style={{width: screenWidth * .075, ...styles.image, ...styles.image3}}
-        src="images/collages/Jason (2017) Birthday Card For Carolyn.jpeg" 
+        src="images/collages/HaveABellPepper_tn.jpg" 
       />
       <img 
         style={{width: screenWidth * .08, ...styles.image, ...styles.image5}}
-        src="images/collages/Jason (2017) Birthday Card For Mattie.jpg" 
+        src="images/collages/CuriousGraduation_tn.jpg" 
       />
       <img 
         style={{width: screenWidth * .07, ...styles.image, ...styles.image4}}
-        src="images/collages/Jason (2017) Birthday Card for Rebecca.jpg" 
+        src="images/collages/PrettyBird_tn.jpg" 
       />
       <img 
         style={{width: screenWidth * .09, ...styles.image, ...styles.image6}}
-        src="images/collages/Jason (2017) Birthday Card For Zoe.jpg" 
+        src="images/collages/BetterHopeTheyArentHungry_tn.jpg" 
       />
     </div>
   </div>
@@ -69,7 +69,8 @@ export default ({
 let styles = {
   image: {
     border: `2px solid` + grey,
-    height: 'auto'
+    height: 'auto',
+    margin: '2%'
   },
   image1: { transform: 'rotate(25deg)' },
   image2: { transform: 'rotate(-15deg)' },

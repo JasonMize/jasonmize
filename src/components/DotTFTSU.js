@@ -1,4 +1,6 @@
-import React from 'react';
+import React from 'react'
+
+import AppProgressiveImage from '../components/AppProgressiveImage'
 
 export default ({ 
   borderColor, 
@@ -9,27 +11,42 @@ export default ({
   dotTop,
   screenHeight,
   screenWidth,
+  textColor
  }) => (
   <div 
     style={{
       alignItems: 'center',
+      color: textColor,
+      fontSize: screenWidth * .015,
       justifyContent: 'center',
       left: `${screenWidth * dotLeft}px`,
       position: 'absolute',
       top: `${screenHeight * dotTop}px`,
     }} 
   >
-    <img 
+    <div
       style={{
         backgroundColor: dotColor,
-        border: `${borderWidth}vw solid` + borderColor,
-        borderRadius: `${screenWidth * dotSize}px`,
-        height: `${screenWidth * dotSize}px`,
-        overflow: 'hidden',
-        textAlign: 'center',
-        width: `${screenWidth * dotSize}px`,
-      }} 
-      src="images/tftsu/ad_facebook_earth+shipyard_308x308.jpg"  
-    />
+          border: `${borderWidth}vw solid` + borderColor,
+          borderRadius: `${screenWidth * dotSize}px`,
+          height: `${screenWidth * dotSize}px`,
+          overflow: 'hidden',
+          textAlign: 'center',
+          width: `${screenWidth * dotSize}px`,
+          position: 'relative'
+      }}
+    > 
+      <AppProgressiveImage
+        tinyUrl={"images/tftsu/artworkAndMerch/earth_shipyard_tn.png"}
+        mediumUrl={"images/tftsu/artworkAndMerch/earth_shipyard_md.png"} 
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          height: `${screenWidth * dotSize}px`,
+          width: `${screenWidth * dotSize}px`,
+        }} 
+      />
+    </div>
   </div>
 );

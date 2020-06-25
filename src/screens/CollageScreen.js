@@ -3,27 +3,9 @@ import React from 'react';
 import Breadcrumb from '../components/Breadcrumb'
 import { black, green, greenLight, grey } from '../constants/colors';
 import ImageGallery from '../components/ImageGallery';
+import { CollageImageList } from '../components/CollageImageList'
 
-class CollageScreen extends React.Component {
-
-  // getImageData = () => {
-  //   let images = []
-  //   let image = {}
-  //   let request = require.context(
-  //     '../../public/images/collages', 
-  //     false, 
-  //     /\.(png|jpe?g|svg)$/
-  //   )
-  //   request.keys().forEach(function(key){
-  //     image = {
-  //       url: request(key),
-  //       caption: null
-  //     }
-  //     images.push(image)
-  //   })
-  //   return images
-  // }
-  
+class CollageScreen extends React.Component {  
   render () {
     return (
       <div style={styles.screenWrap}>        
@@ -37,42 +19,12 @@ class CollageScreen extends React.Component {
         </p>
 
         <ImageGallery
-          getImageData={() => [
-            {
-              url: require('../../public/images/collages/SantaNeedsHisSoup.jpg'),
-              tinyUrl: require('../../public/images/collages/SantaNeedsHisSoup_tn.jpg'),
-              mediumUrl: require('../../public/images/collages/SantaNeedsHisSoup_md.jpg'),
-              caption: 'Santa Needs His Soup'
-            },
-            {
-              url: require('../../public/images/collages/AngelRoad.jpg'),
-              tinyUrl: require('../../public/images/collages/AngelRoad_tn.jpg'),
-              mediumUrl: require('../../public/images/collages/AngelRoad_md.jpg'),
-              caption: 'Angel Road'
-            },
-            {
-              url: require('../../public/images/collages/HaveABellPepper.jpg'),
-              tinyUrl: require('../../public/images/collages/HaveABellPepper_tn.jpg'),
-              mediumUrl: require('../../public/images/collages/HaveABellPepper_md.jpg'),
-              caption: 'Have A Bell Pepper'
-            },
-            {
-              url: require('../../public/images/collages/CuriousGraduation.jpg'),
-              tinyUrl: require('../../public/images/collages/CuriousGraduation_tn.jpg'),
-              mediumUrl: require('../../public/images/collages/CuriousGraduation_md.jpg'),
-              caption: 'Curious Graduation'
-            },
-            {
-              url: require('../../public/images/collages/PrettyBird.jpg'),
-              tinyUrl: require('../../public/images/collages/PrettyBird_tn.jpg'),
-              mediumUrl: require('../../public/images/collages/PrettyBird_md.jpg'),
-              caption: 'Pretty Bird'
-            },
-          ]}
+          imageData={CollageImageList}
           imageBorderColor={grey}
           imageMargin={.02}
           numberOfColumns={3}
           pageSpacing={90} // border + padding * 2
+          backgroundColor={green}
         />
         
       </div>

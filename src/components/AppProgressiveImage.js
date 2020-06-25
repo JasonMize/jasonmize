@@ -25,6 +25,7 @@ export default class ProgressiveImage extends Component {
             ...this.props.style,
             width: `${tinySize}px`,
             display: loaded ? 'none' : 'block',
+            filter: 'blur(2px)'
           }}
 					src={tinyUrl}
 				/>
