@@ -1,3 +1,3 @@
 # jasonmize
 
-personal website built with html/css/sticks/mud
+personal website built with React/HTML/CSS/sticks/mud
