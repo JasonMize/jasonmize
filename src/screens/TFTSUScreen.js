@@ -33,7 +33,7 @@ class TFTSUScreen extends React.Component {
 
         <p>The Strange Universe was a browser game.  Games would last 3 weeks and typically have 70 - 100 players.</p>
 
-        <h3 style={{ color: white }}>Artwork And Merchandise</h3>
+        <h2 style={{ color: white }}>Artwork And Merchandise</h2>
 
         <ImageGallery
           imageData={ArtworkAndMerch}
