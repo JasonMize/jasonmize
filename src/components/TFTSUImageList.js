@@ -11,4 +11,10 @@ export const ArtworkAndMerch = [
     mediumUrl: require('../../public/images/tftsu/artworkAndMerch/martian_ships_md.png'),
     caption: 'Martian Fleet'
   },
+  {
+    url: require('../../public/images/tftsu/artworkAndMerch/elf_fortress.png'),
+    tinyUrl: require('../../public/images/tftsu/artworkAndMerch/elf_fortress_tn.png'),
+    mediumUrl: require('../../public/images/tftsu/artworkAndMerch/elf_fortress_md.png'),
+    caption: 'Elf Fortress'
+  },
 ]
