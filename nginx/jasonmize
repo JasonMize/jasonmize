@@ -1,6 +1,6 @@
 server {
    159.89.55.145 jasonmize.com www.jasonmize.com;
-   root /home/jasonmize/dist/;
+   root /jasonmize/dist/;
    index index.html index.htm;
    location / {
    try_files $uri /index.html =404;
