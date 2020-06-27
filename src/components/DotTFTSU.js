@@ -37,8 +37,8 @@ export default ({
       }}
     > 
       <AppProgressiveImage
-        tinyUrl={"images/tftsu/artworkAndMerch/earth_shipyard_tn.png"}
-        mediumUrl={"images/tftsu/artworkAndMerch/earth_shipyard_md.png"} 
+        tinyUrl={require("../../public/images/tftsu/artworkAndMerch/earth_shipyard_tn.png")}
+        mediumUrl={require("../../public/images/tftsu/artworkAndMerch/earth_shipyard_md.png")} 
         style={{
           position: 'absolute',
           top: 0,
