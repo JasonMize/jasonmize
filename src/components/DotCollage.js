@@ -40,27 +40,27 @@ export default ({
 
       <img 
         style={{width: screenWidth * .09, ...styles.image, ...styles.image1}} 
-        src="images/collages/SantaNeedsHisSoup_tn.jpg" 
+        src={require("../../public/images/collages/SantaNeedsHisSoup_tn.jpg")}
       />
       <img 
         style={{width: screenWidth * .07, ...styles.image, ...styles.image2}}
-        src="/images/collages/AngelRoad_tn.jpg" 
+        src={require("../../public/images/collages/AngelRoad_tn.jpg")}
       />
       <img 
         style={{width: screenWidth * .075, ...styles.image, ...styles.image3}}
-        src="images/collages/HaveABellPepper_tn.jpg" 
+        src={require("../../public/images/collages/HaveABellPepper_tn.jpg")}
       />
       <img 
         style={{width: screenWidth * .08, ...styles.image, ...styles.image5}}
-        src="images/collages/CuriousGraduation_tn.jpg" 
+        src={require("../../public/images/collages/CuriousGraduation_tn.jpg")}
       />
       <img 
         style={{width: screenWidth * .07, ...styles.image, ...styles.image4}}
-        src="images/collages/PrettyBird_tn.jpg" 
+        src={require("../../public/images/collages/PrettyBird_tn.jpg")}
       />
       <img 
         style={{width: screenWidth * .09, ...styles.image, ...styles.image6}}
-        src="images/collages/BetterHopeTheyArentHungry_tn.jpg" 
+        src={require("../../public/images/collages/BetterHopeTheyArentHungry_tn.jpg")}
       />
     </div>
   </div>

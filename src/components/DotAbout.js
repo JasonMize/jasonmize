@@ -29,6 +29,6 @@ export default ({
         textAlign: 'center',
         width: `${screenWidth * dotSize}px`,
       }} 
-      src="images/about/jasonProfile_tux.jpg" />
+      src={require("../../public/images/about/jasonProfile_tux.jpg")} />
   </div>
 );
