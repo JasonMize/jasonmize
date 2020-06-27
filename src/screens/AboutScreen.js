@@ -3,21 +3,9 @@ import React from 'react';
 import Breadcrumb from '../components/Breadcrumb'
 import { grey, black, yellow, greyDark } from '../constants/colors';
 import ImageGallery from '../components/ImageGallery';
+import { JasonImages } from '../components/AboutImageList';
 
 class AboutScreen extends React.Component {
-
-  getImageData = () => {
-    let imageUrls = []
-    let request = require.context(
-      '../../public/images/about', 
-      false, 
-      /\.(png|jpe?g|svg)$/
-    )
-    request.keys().forEach(function(key){
-      imageUrls.push(request(key))
-    })
-    return imageUrls
-  };
 
   render () {
     return (
@@ -33,11 +21,11 @@ class AboutScreen extends React.Component {
 
         <p>
           Click around!  If you see anything you enjoy, please let me know.  Or dislike.  Really, I'm a huge fan of 
-          feedback of any sort.  I promise to only cry on the inside. 
+          feedback of any sort.  I promise to only cry on the inside.  (#TODO - add method for sending feedback)
         </p>
           
         <ImageGallery
-          getImageData={() => this.getImageData()}
+          imageData={JasonImages}
           imageBorderColor={yellow}
           imageMargin={.02}
           numberOfColumns={3}
