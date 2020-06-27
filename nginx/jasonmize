@@ -1,8 +1,14 @@
 server {
-   159.89.55.145 jasonmize.com www.jasonmize.com;
-   root /jasonmize/dist/;
-   index index.html index.htm;
-   location / {
-   try_files $uri /index.html =404;
-   }
+  server_name 159.89.55.145 jasonmize.com www.jasonmize.com;
+  listen 80;
+  root /srv/jasonmize/dist/;
+  index index.html;
+  location /dist/ {
+    alias /srv/jasonmize/dist/;
+    try_files $uri =404;
+  }
+  location / {
+    alias /srv/jasonmize/public/;
+    try_files $uri /index.html =404;
+  }
 }
