@@ -54,12 +54,6 @@ export const CollageImageList = [
     caption: 'Curious Pal'
   },
   {
-    url: require('../../public/images/collages/Woah.png'),
-    tinyUrl: require('../../public/images/collages/Woah_tn.png'),
-    mediumUrl: require('../../public/images/collages/Woah_md.png'),
-    caption: 'Woah'
-  },
-  {
     url: require('../../public/images/collages/BlockParty.jpg'),
     tinyUrl: require('../../public/images/collages/BlockParty_tn.jpg'),
     mediumUrl: require('../../public/images/collages/BlockParty_md.jpg'),
