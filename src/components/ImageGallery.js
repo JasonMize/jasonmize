@@ -88,7 +88,7 @@ export default ({
   const allImageMargins = singleImageMargin * numberOfColumns
   const allImageBorders = imageBorderSize * 2 * numberOfColumns
   const availableSpaceForImages = screenWidth - pageSpacing - allImageMargins - allImageBorders
-  let maxWidth = Math.floor((availableSpaceForImages / numberOfColumns)) // 30 seems to be necessary extra padding
+  let maxWidth = Math.floor(availableSpaceForImages / numberOfColumns)
   
   // divide images into columns 
   let imagesPerColumn = 1
