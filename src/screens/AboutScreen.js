@@ -28,7 +28,7 @@ class AboutScreen extends React.Component {
           imageData={JasonImages}
           imageBorderColor={yellow}
           imageMargin={.02}
-          numberOfColumns={3}
+          numberOfColumns={5}
           pageSpacing={80} // border + padding * 2
         />
         
