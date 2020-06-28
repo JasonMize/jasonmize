@@ -38,6 +38,7 @@ class TFTSUScreen extends React.Component {
         <ImageGallery
           imageData={ArtworkAndMerch}
           imageBorderColor={blueLight}
+          imageBorderSize={'10'}
           imageMargin={.01}
           linkColor={blueLight}
           numberOfColumns={2}

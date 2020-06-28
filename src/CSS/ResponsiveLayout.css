@@ -18,3 +18,13 @@
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
 }
+
+/* .image-gallery-column {
+  background-color: blanchedalmond;
+}
+.image-gallery-image {
+  background-color: blueviolet
+}
+.image-gallery-image-caption {
+  background-color: chocolate;
+} */

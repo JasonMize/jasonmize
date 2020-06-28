@@ -8,6 +8,7 @@ import AppProgressiveImage from '../components/AppProgressiveImage'
 const ImagesInColumn = ({
   backgroundColor, 
   imageBorderColor,
+  imageBorderSize,
   imageMargin, 
   images, 
   linkColor,
@@ -25,6 +26,7 @@ const ImagesInColumn = ({
       >
         {img.caption && (
           <div
+            className='image-gallery-image-caption'
             style={{
               marginTop: `${screenWidth * imageMargin}px`,
               marginLeft: `${screenWidth * imageMargin}px`,
@@ -33,7 +35,7 @@ const ImagesInColumn = ({
               textAlign: 'center',
               overflowWrap: 'normal',
               maxWidth: `${maxWidth}px`,
-              border: `1vw solid ${backgroundColor}`
+              border: `${imageBorderSize}px solid ${backgroundColor}`
             }}
           >
             {img.caption}
@@ -43,9 +45,9 @@ const ImagesInColumn = ({
           tinyUrl={img.tinyUrl}
           mediumUrl={img.mediumUrl}
           tinySize={maxWidth}
-          tinyBorder={`1vw solid ${imageBorderColor}`}
+          tinyBorder={`${imageBorderSize}px solid ${imageBorderColor}`}
           style={{
-            border: `1vw solid ${imageBorderColor}`,
+            border: `${imageBorderSize}px solid ${imageBorderColor}`,
             marginTop: img.caption ? 0 : `${screenWidth * imageMargin}px`,
             marginLeft: `${screenWidth * imageMargin}px`,
             marginRight: `${screenWidth * imageMargin}px`,
@@ -58,9 +60,9 @@ const ImagesInColumn = ({
   )
 )
 
-
 export default ({ 
   imageBorderColor, 
+  imageBorderSize,
   imageData, 
   imageMargin, 
   linkColor,
@@ -77,23 +79,17 @@ export default ({
   } else if (screenWidth < 1000 && numberOfColumns != 1) { // 1000px and smaller have a 2 column max
     numberOfColumns = 2
   }
-  if (imageCount < numberOfColumns) {
+  if (imageCount < numberOfColumns) { // default column count to image count if not many images
     numberOfColumns = imageCount 
   }
-  console.log('BLAMMO: NUMBER OF COLUMNS: ', numberOfColumns)
-  console.log('BLAMMO: SCREEN WIDTH: ', screenWidth)
-
+  
   // determine max width of images
   let singleImageMargin = Math.ceil(screenWidth * imageMargin * 2)
-  console.log('BLAMMO: SINGLE IMAGE MARGIN: ', singleImageMargin)
   const allImageMargins = singleImageMargin * numberOfColumns
-  console.log('BLAMMO: ALL IMAGE MARGINS: ', allImageMargins)
-  console.log('BLAMMO: PAGE SPACING: ', pageSpacing)
-  const availableSpaceForImages = screenWidth - pageSpacing - allImageMargins 
-  console.log('BLAMMO: AVAILABLE SPACE FOR IMAGES: ', availableSpaceForImages)
-  let maxWidth = Math.floor((availableSpaceForImages / numberOfColumns) - 25) // 25 seems to be necessary extra padding
-  console.log('BLAMMO: COLUMN BASED: MAX WIDTH: ', maxWidth)
-
+  const allImageBorders = imageBorderSize * 2 * numberOfColumns
+  const availableSpaceForImages = screenWidth - pageSpacing - allImageMargins - allImageBorders
+  let maxWidth = Math.floor((availableSpaceForImages / numberOfColumns)) // 30 seems to be necessary extra padding
+  
   // divide images into columns 
   let imagesPerColumn = 1
   let offset = 0 // offset is intended to make the extra image in an odd number appear in the first column not the last
@@ -102,8 +98,6 @@ export default ({
     offset = imageCount % numberOfColumns; // even division = 0
     if (imageCount % 2) offset = 1 // not an even division = 1
   }
-
-  console.log('BLAMMO: IMAGES PER COLUMN: ', imagesPerColumn)
 
   let imagesInColumn1 = []
   let imagesInColumn2 = []
@@ -133,16 +127,11 @@ export default ({
   imagesInColumn4 = imageData.slice(colStart4, colEnd4)
   imagesInColumn5 = imageData.slice(colStart5, colEnd5)
 
-  console.log('BLAMMO: COL 1: ', imagesInColumn1)
-  console.log('BLAMMO: COL 2: ', imagesInColumn2)
-  console.log('BLAMMO: COL 3: ', imagesInColumn3)
-  console.log('BLAMMO: COL 4: ', imagesInColumn4)
-  console.log('BLAMMO: COL 5: ', imagesInColumn5)
-
   return (
     <div style={styles.gallery}>
       {imagesInColumn1.length > 0 && (
         <div 
+          className='image-gallery-column'
           style={{
             ...styles.column,
               minWidth: maxWidth,
@@ -151,6 +140,7 @@ export default ({
           <ImagesInColumn
             backgroundColor={backgroundColor} 
             imageBorderColor={imageBorderColor}
+            imageBorderSize={imageBorderSize}
             imageMargin={imageMargin} 
             images={imagesInColumn1} 
             linkColor={linkColor}
@@ -160,7 +150,7 @@ export default ({
         </div>
       )}
       {imagesInColumn2.length > 0 && (
-        <div 
+        <div className='image-gallery-column'
           style={{
             ...styles.column,
               minWidth: maxWidth,
@@ -169,6 +159,7 @@ export default ({
           <ImagesInColumn
             backgroundColor={backgroundColor} 
             imageBorderColor={imageBorderColor}
+            imageBorderSize={imageBorderSize}
             imageMargin={imageMargin} 
             images={imagesInColumn2} 
             linkColor={linkColor}
@@ -179,6 +170,7 @@ export default ({
       )}
       {imagesInColumn3.length > 0 && (
         <div 
+          className='image-gallery-column'
           style={{
             ...styles.column,
               minWidth: maxWidth,
@@ -187,6 +179,7 @@ export default ({
           <ImagesInColumn
             backgroundColor={backgroundColor} 
             imageBorderColor={imageBorderColor}
+            imageBorderSize={imageBorderSize}
             imageMargin={imageMargin} 
             images={imagesInColumn3} 
             linkColor={linkColor}
@@ -197,6 +190,7 @@ export default ({
       )}
       {imagesInColumn4.length > 0 && (
         <div 
+          className='image-gallery-column'
           style={{
             ...styles.column,
               minWidth: maxWidth,
@@ -205,6 +199,7 @@ export default ({
           <ImagesInColumn
             backgroundColor={backgroundColor} 
             imageBorderColor={imageBorderColor}
+            imageBorderSize={imageBorderSize}
             imageMargin={imageMargin} 
             images={imagesInColumn4} 
             linkColor={linkColor}
@@ -215,6 +210,7 @@ export default ({
       )}
       {imagesInColumn5.length > 0 && (
         <div 
+          className='image-gallery-column'
           style={{
             ...styles.column,
               minWidth: maxWidth,
@@ -223,6 +219,7 @@ export default ({
           <ImagesInColumn
             backgroundColor={backgroundColor} 
             imageBorderColor={imageBorderColor}
+            imageBorderSize={imageBorderSize}
             imageMargin={imageMargin} 
             images={imagesInColumn5} 
             linkColor={linkColor}
@@ -241,7 +238,6 @@ let styles = {
   gallery: {
   },
   column: {
-    display: 'inline-flex',
-    flexDirection: 'column'
+    display: 'inline-grid',
   }
 }

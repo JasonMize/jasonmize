@@ -21,6 +21,7 @@ class CollageScreen extends React.Component {
         <ImageGallery
           imageData={CollageImageList}
           imageBorderColor={grey}
+          imageBorderSize={'10'}
           imageMargin={.02}
           numberOfColumns={5}
           pageSpacing={90} // border + padding * 2

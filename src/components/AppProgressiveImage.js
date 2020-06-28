@@ -8,28 +8,36 @@ export default class ProgressiveImage extends Component {
 		const { loaded } = this.state;
 		
 		return (
-			<span>
+			<div
+				className="image-gallery-image"
+				style={{
+					width: this.props.style.maxWidth
+				}}
+			>
 				<img
 					onLoad={() => {
 						this.setState({ loaded: true });
 					}}
           style={{
+						display: loaded ? 'block' : 'none',
+						margin: 0,
+						padding: 0,
             ...this.props.style,
-            display: loaded ? 'block' : 'none'
-          
           }}
 					src={this.props.mediumUrl}
 				/>
 				<img
 					style={{
-            ...this.props.style,
-            width: `${tinySize}px`,
+						width: `${tinySize}px`,
             display: loaded ? 'none' : 'block',
-            filter: 'blur(2px)'
+						filter: 'blur(2px)',
+						margin: 0,
+						padding: 0,
+            ...this.props.style,
           }}
 					src={tinyUrl}
 				/>
-			</span>
+			</div>
 		);
 	}
 }
