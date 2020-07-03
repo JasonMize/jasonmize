@@ -13,40 +13,28 @@ export default ({
   screenWidth,
   textColor
  }) => (
-  <div 
+  <div
     style={{
-      alignItems: 'center',
+      backgroundColor: dotColor,
+      border: `${borderWidth}vw solid` + borderColor,
+      borderRadius: `${screenWidth * dotSize}px`,
       color: textColor,
       fontSize: screenWidth * .015,
-      justifyContent: 'center',
+      height: `${screenWidth * dotSize}px`,
       left: `${screenWidth * dotLeft}px`,
-      position: 'absolute',
+      overflow: 'hidden',
+      textAlign: 'center',
       top: `${screenHeight * dotTop}px`,
-    }} 
-  >
-    <div
+      position: 'absolute',
+      width: `${screenWidth * dotSize}px`,
+    }}
+  > 
+    <AppProgressiveImage
+      tinyUrl={require("../../public/images/tftsu/artworkAndMerch/earth_shipyard_tn.png")}
+      mediumUrl={require("../../public/images/tftsu/artworkAndMerch/earth_shipyard_md.png")} 
       style={{
-        backgroundColor: dotColor,
-          border: `${borderWidth}vw solid` + borderColor,
-          borderRadius: `${screenWidth * dotSize}px`,
-          height: `${screenWidth * dotSize}px`,
-          overflow: 'hidden',
-          textAlign: 'center',
-          width: `${screenWidth * dotSize}px`,
-          position: 'relative'
-      }}
-    > 
-      <AppProgressiveImage
-        tinyUrl={require("../../public/images/tftsu/artworkAndMerch/earth_shipyard_tn.png")}
-        mediumUrl={require("../../public/images/tftsu/artworkAndMerch/earth_shipyard_md.png")} 
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          height: `${screenWidth * dotSize}px`,
-          width: `${screenWidth * dotSize}px`,
-        }} 
-      />
-    </div>
+        width: `100%`,
+      }} 
+    />
   </div>
 );
