@@ -11,7 +11,7 @@ class CollageScreen extends React.Component {
       <div style={styles.screenWrap}>        
         <Breadcrumb to='/' text='Home' borderColor={greenLight} />
         
-        <h1>Collage</h1>
+        <h1>Collages</h1>
       
         <p>
           These are some collages that I've made.  They're typically pieces that I've made for friends as

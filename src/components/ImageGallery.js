@@ -30,7 +30,7 @@ const ImagesInColumn = ({
               marginTop: `${screenWidth * imageMargin}px`,
               marginLeft: `${screenWidth * imageMargin}px`,
               marginRight: `${screenWidth * imageMargin}px`,
-              marginBottom: 0,
+              marginBottom: '5px',
               textAlign: 'center',
               overflowWrap: 'normal',
               maxWidth: `${maxWidth}px`,

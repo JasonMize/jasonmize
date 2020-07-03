@@ -8,23 +8,18 @@ import HomeScreen from './screens/HomeScreen'
 import TFTSUScreen from './screens/TFTSUScreen'
 import WritingScreen from './screens/WritingScreen'
 import CollageScreen from './screens/CollageScreen'
-import {CollageImageScreen} from './screens/CollageImageScreen'
+import CollageImageScreen from './screens/CollageImageScreen'
 import AboutScreen from './screens/AboutScreen'
+import AboutImageScreen from './screens/AboutImageScreen'
 import { black } from './constants/colors'
 
 import {screenWidthContext, screenHeightContext} from './contexts/ScreenSizeContext'
+import TFTSUImageScreen from './screens/TFTSUImageScreen'
 
 class App extends Component {
   state = {
     screenHeight: 0, 
     screenWidth: 0,
-  }
-  
-  test = (renderProps) => {
-    console.log('BLAMMO: TEST: ', renderProps)
-    return (
-      <div style={{ height: '1000px', backgroundColor: 'pink' }}>BLAMMO!!!</div>
-    )
   }
   
   render () {
@@ -49,11 +44,13 @@ class App extends Component {
             <div className="App" style={styles.appWrap}>
               <Header />
               <Route path="/" exact component={HomeScreen} />
-              <Route path="/about" component={AboutScreen} />
-              <Route path="/collages/:page_slug" render={routerProps => this.test(routerProps)} />
-              <Route path="/collages" component={CollageScreen} />
+              <Route path="/about" exact component={AboutScreen} />
+              <Route path="/about/:page_slug" component={AboutImageScreen} />
+              <Route path="/collages" exact component={CollageScreen} />
+              <Route path="/collages/:page_slug" component={CollageImageScreen} />
               <Route path="/writings" component={WritingScreen} />
-              <Route path="/tftsu" component={TFTSUScreen} />
+              <Route path="/tftsu" exact component={TFTSUScreen} />
+              <Route path="/tftsu/:page_slug" component={TFTSUImageScreen} />
             </div>
           </screenHeightContext.Provider>
         </screenWidthContext.Provider>
