@@ -13,25 +13,19 @@ export default ({
   screenWidth,
   textColor 
 }) => (
-  <div 
-    style={{
-      alignItems: 'center',
-      fontSize: screenWidth * .015,
-      justifyContent: 'center',
-      left: `${screenWidth * dotLeft}px`,
-      position: 'absolute',
-      top: `${screenHeight * dotTop}px`,
-    }} 
-  >
+
     <div 
       style={{
         backgroundColor: dotColor,
         border: `${borderWidth}vw solid` + borderColor,
         borderRadius: `${screenWidth * dotSize}px`,
         color: textColor,
+        fontSize: screenWidth * .015,
         height: `${screenWidth * dotSize}px`,
+        left: `${screenWidth * dotLeft}px`,
         overflow: 'hidden',
-        textAlign: 'center',
+        position: 'absolute',
+        top: `${screenHeight * dotTop}px`,
         width: `${screenWidth * dotSize}px`,
       }}
     >
@@ -63,7 +57,7 @@ export default ({
         src={require("../../public/images/collages/BetterHopeTheyArentHungry_tn.jpg")}
       />
     </div>
-  </div>
+  
 )
 
 let styles = {

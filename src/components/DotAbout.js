@@ -12,22 +12,21 @@ export default ({
  }) => (
   <div 
     style={{
-      alignItems: 'center',
-      justifyContent: 'center',
+      backgroundColor: dotColor,
+      border: `${borderWidth}vw solid` + borderColor,
+      borderRadius: `${screenWidth * dotSize}px`,
+      height: `${screenWidth * dotSize}px`,
       left: `${screenWidth * dotLeft}px`,
+      overflow: 'hidden',
       position: 'absolute',
+      textAlign: 'center',
       top: `${screenHeight * dotTop}px`,
+      width: `${screenWidth * dotSize}px`,
     }} 
   >
     <img 
       style={{
-        backgroundColor: dotColor,
-        border: `${borderWidth}vw solid` + borderColor,
-        borderRadius: `${screenWidth * dotSize}px`,
-        height: `${screenWidth * dotSize}px`,
-        overflow: 'hidden',
-        textAlign: 'center',
-        width: `${screenWidth * dotSize}px`,
+        width: '100%'
       }} 
       src={require("../../public/images/about/jasonProfile_tux.jpg")} />
   </div>
