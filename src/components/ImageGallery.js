@@ -20,8 +20,7 @@ const ImagesInColumn = ({
       key={index}
     > 
       <AppLink
-        target="_blank" 
-        to={img.url}
+        to={img.pageSlug}
         linkColor={linkColor}
       >
         {img.caption && (

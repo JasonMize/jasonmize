@@ -8,8 +8,10 @@ import HomeScreen from './screens/HomeScreen'
 import TFTSUScreen from './screens/TFTSUScreen'
 import WritingScreen from './screens/WritingScreen'
 import CollageScreen from './screens/CollageScreen'
+import {CollageImageScreen} from './screens/CollageImageScreen'
 import AboutScreen from './screens/AboutScreen'
 import { black } from './constants/colors'
+
 import {screenWidthContext, screenHeightContext} from './contexts/ScreenSizeContext'
 
 class App extends Component {
@@ -17,7 +19,14 @@ class App extends Component {
     screenHeight: 0, 
     screenWidth: 0,
   }
-
+  
+  test = (renderProps) => {
+    console.log('BLAMMO: TEST: ', renderProps)
+    return (
+      <div style={{ height: '1000px', backgroundColor: 'pink' }}>BLAMMO!!!</div>
+    )
+  }
+  
   render () {
     const { screenHeight, screenWidth } = this.state
 
@@ -41,6 +50,7 @@ class App extends Component {
               <Header />
               <Route path="/" exact component={HomeScreen} />
               <Route path="/about" component={AboutScreen} />
+              <Route path="/collages/:page_slug" render={routerProps => this.test(routerProps)} />
               <Route path="/collages" component={CollageScreen} />
               <Route path="/writings" component={WritingScreen} />
               <Route path="/tftsu" component={TFTSUScreen} />
