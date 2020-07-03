@@ -22,7 +22,7 @@ class TFTSUScreen extends React.Component {
             style={{
               width: '95%'
             }} 
-            src="images/tftsu/logo_vector.svg"  
+            src="/images/tftsu/logo_vector.svg"  
           />      
         </div>
 

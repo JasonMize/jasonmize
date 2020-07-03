@@ -43,9 +43,8 @@ let styles = {
     backgroundColor: grey,
     border: '20px solid' + yellow,
     color: black,
-    flex: 1,
-    marginTop: 25,
-    padding: 20,
+    marginTop: '25px',
+    padding: '20px',
   }
 };
 

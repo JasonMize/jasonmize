@@ -4,7 +4,7 @@ export default class ProgressiveImage extends Component {
 	state = { loaded: false };
   
   render() {
-		const { tinyUrl, tinySize } = this.props;
+		const { tinyUrl, tinySize, mediumUrl, url } = this.props;
 		const { loaded } = this.state;
 		
 		return (
@@ -24,7 +24,7 @@ export default class ProgressiveImage extends Component {
 						padding: 0,
             ...this.props.style,
           }}
-					src={this.props.mediumUrl}
+					src={mediumUrl ? mediumUrl : url}
 				/>
 				<img
 					style={{

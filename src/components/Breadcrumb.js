@@ -21,6 +21,7 @@ export default ({to, text, style, color, borderColor}) => (
           marginRight: '20px',
           textAlign: 'center', 
           width: '70px',
+          ...style
         }}
       >
         <div>
@@ -32,8 +33,7 @@ export default ({to, text, style, color, borderColor}) => (
             icon={faHandPointLeft} 
           />
         </div>
-        <div
-        >{text}</div>
+        <div>{text}</div>
       </div>
     }
   />
