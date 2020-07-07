@@ -3,7 +3,7 @@ import { BrowserRouter, Route } from 'react-router-dom'
 import { hot } from 'react-hot-loader'
 import ReactResizeDetector from 'react-resize-detector'
 import ReactGA from 'react-ga';
-import { CreateBrowserHistory } from 'history'
+import { createBrowserHistory } from 'history'
 
 import Header from './components/Header'
 import HomeScreen from './screens/HomeScreen'
@@ -18,17 +18,10 @@ import { black } from './constants/colors'
 import {screenWidthContext, screenHeightContext} from './contexts/ScreenSizeContext'
 import TFTSUImageScreen from './screens/TFTSUImageScreen'
 
-
+// GOOGLE ANALYTICS
 const trackingId = "UA-86403741-1"; // Google Analytics tracking ID
 ReactGA.initialize(trackingId);
-// ReactGA.pageview(window.location.pathname + window.location.search);
-// ReactGA.set({
-  // userId: auth.currentUserId(),
-  // any data that is relevant to the user session
-  // that you would like to track with google analytics
-// })
 const history = createBrowserHistory();
-
 // Initialize google analytics page view tracking
 history.listen(location => {
   ReactGA.set({ page: location.pathname }); // Update the user's current page
