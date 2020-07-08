@@ -1,43 +1,38 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 
-export default class ProgressiveImage extends Component {
-	state = { loaded: false };
+export default ({ tinyUrl, tinySize, mediumUrl, url, style }) => {
+	let [loaded, updateLoaded] = useState(false)
   
-  render() {
-		const { tinyUrl, tinySize, mediumUrl, url } = this.props;
-		const { loaded } = this.state;
-		
-		return (
-			<div
-				className="image-gallery-image"
-				style={{
-					width: this.props.style.maxWidth
+	return (
+		<div
+			className="image-gallery-image"
+			style={{
+				width: style.maxWidth
+			}}
+		>
+			<img
+				onLoad={() => {
+					updateLoaded(loaded = true)
 				}}
-			>
-				<img
-					onLoad={() => {
-						this.setState({ loaded: true });
-					}}
-          style={{
-						display: loaded ? 'block' : 'none',
-						margin: 0,
-						padding: 0,
-            ...this.props.style,
-          }}
-					src={mediumUrl ? mediumUrl : url}
-				/>
-				<img
-					style={{
-						width: `${tinySize}px`,
-            display: loaded ? 'none' : 'block',
-						filter: 'blur(2px)',
-						margin: 0,
-						padding: 0,
-            ...this.props.style,
-          }}
-					src={tinyUrl}
-				/>
-			</div>
-		);
-	}
+				style={{
+					display: loaded ? 'block' : 'none',
+					margin: 0,
+					padding: 0,
+					...style,
+				}}
+				src={mediumUrl ? mediumUrl : url}
+			/>
+			<img
+				style={{
+					width: `${tinySize}px`,
+					display: loaded ? 'none' : 'block',
+					filter: 'blur(2px)',
+					margin: 0,
+					padding: 0,
+					...style,
+				}}
+				src={tinyUrl}
+			/>
+		</div>
+	);
 }

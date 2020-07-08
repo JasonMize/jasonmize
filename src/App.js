@@ -1,9 +1,8 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import { BrowserRouter, Route } from 'react-router-dom'
 import { hot } from 'react-hot-loader'
 import ReactResizeDetector from 'react-resize-detector'
 import ReactGA from 'react-ga';
-import { createBrowserHistory } from 'history'
 
 import Header from './components/Header'
 import HomeScreen from './screens/HomeScreen'
@@ -21,54 +20,42 @@ import TFTSUImageScreen from './screens/TFTSUImageScreen'
 // GOOGLE ANALYTICS
 const trackingId = "UA-86403741-1"; // Google Analytics tracking ID
 ReactGA.initialize(trackingId);
-const history = createBrowserHistory();
-// Initialize google analytics page view tracking
-history.listen(location => {
-  ReactGA.set({ page: location.pathname }); // Update the user's current page
-  ReactGA.pageview(location.pathname); // Record a pageview for the given page
-});
 
-class App extends Component {
-  state = {
-    screenHeight: 0, 
-    screenWidth: 0,
-  }
+function App() {
+  let [screenWidth, setScreenWidth] = useState(0);
+  let [screenHeight, setScreenHeight] = useState(0);
+
+  return (
+    <BrowserRouter>
+      {/* tracks screen size and passes it to context */}
+      <ReactResizeDetector 
+        handleWidth 
+        handleHeight 
+        onResize={(width, height) => {
+          setScreenWidth(screenWidth = width)
+          setScreenHeight(screenHeight = height)
+        }} 
+      />
+
+      <screenWidthContext.Provider value={screenWidth}>
+        <screenHeightContext.Provider value={screenHeight}>
+    
+          <div className="App" style={styles.appWrap}>
+            <Header />
+            <Route path="/" exact component={HomeScreen} />
+            <Route path="/about" exact component={AboutScreen} />
+            <Route path="/about/:page_slug" component={AboutImageScreen} />
+            <Route path="/collages" exact component={CollageScreen} />
+            <Route path="/collages/:page_slug" component={CollageImageScreen} />
+            <Route path="/writings" component={WritingScreen} />
+            <Route path="/tftsu" exact component={TFTSUScreen} />
+            <Route path="/tftsu/:page_slug" component={TFTSUImageScreen} />
+          </div>
   
-  render () {
-    const { screenHeight, screenWidth } = this.state
-
-    return (
-      <BrowserRouter history={history}>
-        {/* tracks screen size and passes it to context */}
-        <ReactResizeDetector 
-          handleWidth 
-          handleHeight 
-          onResize={(width, height) => 
-            this.setState(() => ({ 
-              ...this.state, 
-              screenWidth: width, 
-              screenHeight: height
-            }))
-          }
-        />
-        <screenWidthContext.Provider value={screenWidth}>
-          <screenHeightContext.Provider value={screenHeight}>
-            <div className="App" style={styles.appWrap}>
-              <Header />
-              <Route path="/" exact component={HomeScreen} />
-              <Route path="/about" exact component={AboutScreen} />
-              <Route path="/about/:page_slug" component={AboutImageScreen} />
-              <Route path="/collages" exact component={CollageScreen} />
-              <Route path="/collages/:page_slug" component={CollageImageScreen} />
-              <Route path="/writings" component={WritingScreen} />
-              <Route path="/tftsu" exact component={TFTSUScreen} />
-              <Route path="/tftsu/:page_slug" component={TFTSUImageScreen} />
-            </div>
-          </screenHeightContext.Provider>
-        </screenWidthContext.Provider>
-      </BrowserRouter>
-    );
-  }
+        </screenHeightContext.Provider>
+      </screenWidthContext.Provider>
+    </BrowserRouter>
+  )
 }
 
 let styles = {
