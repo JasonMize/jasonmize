@@ -17,7 +17,7 @@ export default ({
     <div 
       style={{
         backgroundColor: dotColor,
-        border: `${borderWidth}vw solid` + borderColor,
+        border: `${borderWidth}px solid` + borderColor,
         borderRadius: `${screenWidth * dotSize}px`,
         color: textColor,
         fontSize: screenWidth * .015,
