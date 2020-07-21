@@ -20,9 +20,7 @@ export default () => {
         }}
       >
         <img 
-          style={{
-            width: '95%'
-          }} 
+          style={{width: '95%'}} 
           src="/images/tftsu/logo_vector.svg"  
         />      
       </div>
@@ -34,7 +32,7 @@ export default () => {
 
       <p>The Strange Universe was a browser game.  Games would last 3 weeks and typically have 70 - 100 players.</p>
 
-      <h2 style={{ color: white }}>Artwork And Merchandise</h2>
+      <h2 style={{ color: white, marginTop: 40 }}>Strange Artwork</h2>
 
       <ImageGallery
         imageData={ArtworkAndMerch}
