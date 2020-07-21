@@ -21,6 +21,24 @@ import TFTSUImageScreen from './screens/TFTSUImageScreen'
 const trackingId = "UA-86403741-1"; // Google Analytics tracking ID
 ReactGA.initialize(trackingId);
 
+const fontSizer = width => {
+  if (width < 350) {
+    return `${width * .05}px` 
+  } else if (width >= 350 && width < 450) {
+    return `${width * .04}px` 
+  } else if (width >= 450 && width < 600) {
+    return `${width * .03}px` 
+  } else if (width >= 600 && width < 768) {
+    return `${width * .025}px` 
+  } else if (width >= 768 && width < 992) {
+    return `${width * .019}px` 
+  } else if (width >= 992 && width < 1200) {
+    return `${width * .015}px` 
+  } else {
+    return `${width * .015}px` 
+  }
+}
+
 function App() {
   let [screenWidth, setScreenWidth] = useState(0);
   let [screenHeight, setScreenHeight] = useState(0);
@@ -40,7 +58,7 @@ function App() {
       <screenWidthContext.Provider value={screenWidth}>
         <screenHeightContext.Provider value={screenHeight}>
     
-          <div className="App" style={styles.appWrap}>
+          <div className="App" style={{ ...styles.appWrap, fontSize: fontSizer(screenWidth) }}>
             <Header />
             <Route path="/" exact component={HomeScreen} />
             <Route path="/about" exact component={AboutScreen} />
