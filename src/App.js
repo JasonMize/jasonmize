@@ -35,7 +35,7 @@ const fontSizer = width => {
   } else if (width >= 992 && width < 1200) {
     return `${width * .015}px` 
   } else {
-    return `${width * .015}px` 
+    return
   }
 }
 
