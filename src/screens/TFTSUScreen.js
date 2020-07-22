@@ -21,7 +21,7 @@ export default () => {
       >
         <img 
           style={{width: '95%'}} 
-          src="/images/tftsu/logo_vector.svg"  
+          src={require("../../public/images/tftsu/logo_vector.svg")}
         />      
       </div>
 

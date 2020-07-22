@@ -4,7 +4,7 @@ import { greyDark } from '../constants/colors'
 
 export default () => (
   <div style={styles.headerWrap} id="header">
-    <img style={styles.image} src="/images/jasonmize.png" />
+    <img style={styles.image} src={require("../../public/images/jasonmize.png")} />
   </div>
 )
 
