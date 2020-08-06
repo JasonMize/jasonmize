@@ -1,4 +1,6 @@
-import React from 'react';
+import React from 'react'
+
+import AppProgressiveImage from '../components/AppProgressiveImage'
 
 export default ({ 
   borderColor, 
@@ -24,10 +26,14 @@ export default ({
       width: `${screenWidth * dotSize}px`,
     }} 
   >
-    <img 
+
+    <AppProgressiveImage
+      mediumUrl={require("../../public/images/about/jasonProfile_tux.jpg")} 
       style={{
-        width: '100%'
+        width: `100%`,
       }} 
-      src={require("../../public/images/about/jasonProfile_tux.jpg")} />
+      tinySize={screenWidth * dotSize}
+    />
+
   </div>
 );

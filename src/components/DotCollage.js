@@ -1,6 +1,7 @@
-import React from 'react';
+import React from 'react'
 
-import { grey } from '../constants/colors';
+import { grey } from '../constants/colors'
+import AppProgressiveImage from '../components/AppProgressiveImage'
 
 export default ({ 
   borderColor, 
