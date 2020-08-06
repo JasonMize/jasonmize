@@ -1,20 +1,20 @@
 # jasonmize
 
-personal website built with React/HTML/CSS/sticks/mud
+This is my personal website.  It was built with React/HTML/CSS/sticks/mud.
 
 
-# to run
+## to run
 
-$ npm install
-$ npm run dev
+* $ npm install
+* $ npm run dev
 
 
-# update server  
+## update server  
 
-$ ssh into server
-$ cd /srv/jasonmize
-$ git pull
-$ npm run build
+* $ ssh into server
+* $ cd /srv/jasonmize
+* $ git pull
+* $ npm run build
 
 
 ## images
