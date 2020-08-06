@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 
+import AppLoadingSpinner from './AppLoadingSpinner'
+
 export default ({ tinyUrl, tinySize, mediumUrl, url, style }) => {
 	let [loaded, updateLoaded] = useState(false)
   
@@ -7,6 +9,7 @@ export default ({ tinyUrl, tinySize, mediumUrl, url, style }) => {
 		<div
 			className="image-gallery-image"
 			style={{
+				position: 'relative',
 				width: style.maxWidth
 			}}
 		>
@@ -33,6 +36,11 @@ export default ({ tinyUrl, tinySize, mediumUrl, url, style }) => {
 				}}
 				src={tinyUrl}
 			/>
+			
+			{!loaded && (
+				<AppLoadingSpinner />
+			)}
+			
 		</div>
 	);
 }
